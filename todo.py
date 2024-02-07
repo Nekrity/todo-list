@@ -6,33 +6,38 @@
 # 
 
 def add(list, item):
+  list.append(item)
   # https://www.w3schools.com/python/python_lists_add.asp
   pass
 
 
 def remove(list, index):
   # https://www.w3schools.com/python/python_lists_remove.asp
+  list.pop(index)
   pass
 
 
 def clear(list):
   # https://www.w3schools.com/python/python_lists_remove.asp
+  list.clear()
+  print("List is empty now, what you want to do?")
   pass
 
 
 def print_list(list):
   # https://www.w3schools.com/python/python_lists_loop.asp
+  print(list)
   pass
 
 
-def show(list):
+def show(list, index):
   # https://www.w3schools.com/python/python_lists_access.asp
+  print(list[index])
   pass
 
 list = []
-print("List is empty now, what you want to do?")
 while True:
-  choice = int(input("1. Add\n2. Remove\n3. Clear\n4. Print list\n5. Show item by index"))
+  choice = int(input("1. Add\n2. Remove\n3. Clear\n4. Print list\n5. Show item by index\n6. Exit\n"))
   if choice == 1:
     item = input("What you want to add?\n")
     add(list, item)
@@ -47,6 +52,10 @@ while True:
   elif choice == 4:
     print_list(list)
   elif choice == 5:
-    show(list)
+    index = int(input("Which item would you like to see?\n"))
+    show(list, index)
+  elif choice == 6:
+    print("Exiting...")
+    break
   else:
     print("Invalid input")
