@@ -6,8 +6,15 @@
 # 
 
 def add(list, item):
-  list.append(item)
-  # https://www.w3schools.com/python/python_lists_add.asp
+  if (len(list)>=10):
+    print("error! Can't be more than 10 elements in the list")
+  else:
+    if (len(item)==0):
+      print("error! Can't input blank text")
+    elif (len(item)>=100):
+      print("error! Can't input text more than 100 symbols")
+    else:
+      list.append(item)
   pass
 
 
@@ -26,7 +33,10 @@ def clear(list):
 
 def print_list(list):
   # https://www.w3schools.com/python/python_lists_loop.asp
-  print(list)
+  if (list==[]):
+    print("List is empty")
+  else:
+    print(list)
   pass
 
 
